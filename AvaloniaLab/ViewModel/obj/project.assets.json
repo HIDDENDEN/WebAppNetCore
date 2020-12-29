@@ -9952,11 +9952,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/denis/Non_iCloudFolder/Release/AvaloniaLab/ViewModel/ViewModel.csproj",
+      "projectUniqueName": "/Users/denis/Non_iCloudFolder/C#/s02170142/AvaloniaLab/ViewModel/ViewModel.csproj",
       "projectName": "ViewModel",
-      "projectPath": "/Users/denis/Non_iCloudFolder/Release/AvaloniaLab/ViewModel/ViewModel.csproj",
+      "projectPath": "/Users/denis/Non_iCloudFolder/C#/s02170142/AvaloniaLab/ViewModel/ViewModel.csproj",
       "packagesPath": "/Users/denis/.nuget/packages/",
-      "outputPath": "/Users/denis/Non_iCloudFolder/Release/AvaloniaLab/ViewModel/obj/",
+      "outputPath": "/Users/denis/Non_iCloudFolder/C#/s02170142/AvaloniaLab/ViewModel/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
@@ -9973,8 +9973,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "/Users/denis/Non_iCloudFolder/Release/ImgProcLib/ImgProcLib.csproj": {
-              "projectPath": "/Users/denis/Non_iCloudFolder/Release/ImgProcLib/ImgProcLib.csproj"
+            "/Users/denis/Non_iCloudFolder/C#/s02170142/ImgProcLib/ImgProcLib.csproj": {
+              "projectPath": "/Users/denis/Non_iCloudFolder/C#/s02170142/ImgProcLib/ImgProcLib.csproj"
             }
           }
         }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Wy3b7upt3I7mhTAHm7y7/Bnk0OUEuIPLiTShM+8jywyWMpttk5kH9OV4PmBB/wFV7NFyUVera6fs8mQt/I0uqA==",
+  "dgSpecHash": "47zmTHCi8mbijHHa1BZwRYAv3EceDLHolDC+gaSW/3YP+n9xfH+RzD/gsMBQbffvcnI0WCf7yJJnh7BFP0xP/w==",
   "success": true,
-  "projectFilePath": "/Users/denis/Non_iCloudFolder/Release/AvaloniaLab/ViewModel/ViewModel.csproj",
+  "projectFilePath": "/Users/denis/Non_iCloudFolder/C#/s02170142/AvaloniaLab/ViewModel/ViewModel.csproj",
   "expectedPackageFiles": [
     "/Users/denis/.nuget/packages/avalonia/0.9.12/avalonia.0.9.12.nupkg.sha512",
     "/Users/denis/.nuget/packages/avalonia.desktop/0.9.12/avalonia.desktop.0.9.12.nupkg.sha512",

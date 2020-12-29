@@ -42,7 +42,9 @@ namespace ImgProcLib
 
     public class ImageProcClass
     {
-        static CancellationTokenSource cts;
+        public static CancellationTokenSource cts;
+        public void SetCTS(CancellationTokenSource _cts)
+        {cts = _cts;}
         public static string[] filePaths = null;
         String dirr = "";
 

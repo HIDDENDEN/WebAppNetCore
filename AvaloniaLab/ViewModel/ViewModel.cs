@@ -22,19 +22,20 @@ namespace ViewModel
 
             Dispatcher.UIThread.InvokeAsync(() =>
             {
-                if(!AllUniqueRecognitionResults.Contains(rm.PredictionStringResult))
+                if (!AllUniqueRecognitionResults.Contains(rm.PredictionStringResult))
                     AllUniqueRecognitionResults.Add(rm.PredictionStringResult);
 
-                UpdateCollection(rm); 
-                
-                
+                UpdateCollection(rm);
+
+
             });
-            
-            lock(lockobj){
-            //заносим результаты распознования в БД
-                imagesLibraryContext.AddRecognitionResultToDatabase(rm);
+
+            lock (lockobj)
+            {
+                //заносим результаты распознования в БД
+                // imagesLibraryContext.AddRecognitionResultToDatabase(rm);
             }
-           
+
         }
 
         //выводим результаты, которые уже есть в БД
@@ -42,20 +43,22 @@ namespace ViewModel
         {
             Dispatcher.UIThread.InvokeAsync(() =>
              {
-                 if(!AllUniqueRecognitionResults.Contains(rm.PredictionStringResult))
-                    AllUniqueRecognitionResults.Add(rm.PredictionStringResult);
-                    
+                 if (!AllUniqueRecognitionResults.Contains(rm.PredictionStringResult))
+                     AllUniqueRecognitionResults.Add(rm.PredictionStringResult);
+
                  UpdateCollection(rm);
              });
         }
 
         private object lockobj;
 
+        Client client;
+
         string _dirr = null;
         public event PropertyChangedEventHandler PropertyChanged;
         IUIServices _uiservices;
 
-        ImageProcClass _imgProcClass;
+        // ImageProcClass _imgProcClass;
 
         PredictionQueue _predictionQueue;
 
@@ -148,14 +151,20 @@ namespace ViewModel
 
 
         //DATABASE
-        ImagesLibraryContext imagesLibraryContext;
+        // ImagesLibraryContext imagesLibraryContext;
 
 
 
         public ViewModel(IUIServices uiservices)
-        {   lockobj=new object();
+        {
+            lockobj = new object();
+            client = new Client();
+            client.OnRecognizedImages += (rm) => {Console.WriteLine("PicProcessed called"); Dispatcher.UIThread.InvokeAsync(() => { RecognizedImagesCollection.Add(rm); _uiservices.SetServerOnline();}); };
+            client.OnGetDatabaseStat += (tup) => {Console.WriteLine("stat called");ServerStatistic(tup);};
+            client.OnServerOffline += () => {_uiservices.SetServerOffline();};
+            
             //database
-            imagesLibraryContext = new ImagesLibraryContext();
+            // imagesLibraryContext = new ImagesLibraryContext();
             DbStatisticCollection = null;
 
             // imagesLibraryContext.AddRecognitionResultToDatabase(new ReturnMessage("/Users/denis/Downloads/ImageSet/res/car.jpg","car"));
@@ -165,7 +174,7 @@ namespace ViewModel
             _numOfRecognizedImages = 0;
 
             // СОЗДАЕМ ЭКЗЕМПЛЯР БИБЛИОТЕКИ
-            _imgProcClass = new ImageProcClass("");
+            // _imgProcClass = new ImageProcClass("");
 
             //Initialise combo box with various possible predict results
             ComboBoxWithPossibleResults = new List<string>();
@@ -182,21 +191,34 @@ namespace ViewModel
 
             _predictionQueue = new PredictionQueue();
             _predictionQueue.Enqueued += PredictionHandler_WPF;//привязали обработку вывода результатов
+
+            //==========================
+            RecognizedImagesCollection = new ObservableCollection<ReturnMessage>();
+            RecognizedImagesCollection.CollectionChanged += RenewComboBoxSelectedCollection;
+            AllUniqueRecognitionResults = new List<string>();
+            DbStatisticCollection = new ObservableCollection<string>();
+            
+            client.LoadAllPreviousImages();
         }
 
         void InterruptRecognition()
         {
-            _imgProcClass.InterruptTasks();
-            Dispatcher.UIThread.InvokeAsync(() =>
-            {
-                UpdateStatistic();
-            });
+            // client.Cancel();
+            // client.Stop();
+            client.StopProcessing();
+
+            // _imgProcClass.InterruptTasks();
+            // Dispatcher.UIThread.InvokeAsync(() =>
+            // {
+            //     UpdateStatistic();
+            // });
         }
 
         bool flagLastActionDbClear = false;
         void ClearDb()
         {
-            imagesLibraryContext.ResetDatabase();
+            client.ClearDB();
+            // imagesLibraryContext.ResetDatabase();
             flagLastActionDbClear = true;
             DbStatisticCollection = new ObservableCollection<string>();
         }
@@ -216,7 +238,7 @@ namespace ViewModel
 
             if (_reopenFlag == true)
             {
-                _imgProcClass = new ImageProcClass("");
+                // _imgProcClass = new ImageProcClass("");
                 _predictionQueue = new PredictionQueue();
                 _predictionQueue.Enqueued += PredictionHandler_WPF;
 
@@ -225,31 +247,36 @@ namespace ViewModel
 
             if (_dirr != null)
             {
-                //count num of all pics in folder
-                _numOfAllImages = 0;
-                foreach (string var in Directory.GetFiles(_dirr, "*.jpg"))
-                    _numOfAllImages++;
+                await client.ProcessDirectory(_dirr);
+                // client.GetDbStatistic();
+
+                // //count num of all pics in folder
+                // _numOfAllImages = 0;
+                // foreach (string var in Directory.GetFiles(_dirr, "*.jpg"))
+                //     _numOfAllImages++;
 
 
-                //launch recognition
-                _imgProcClass.SetDirr(_dirr);
+                // //launch recognition
+                // // _imgProcClass.SetDirr(_dirr);
 
-                //know what files are not in database and need to be processed
-                string[] unRecognizedImageFiles = getUnProcessedImageFiles();
+                // //know what files are not in database and need to be processed
+                // string[] unRecognizedImageFiles = getUnProcessedImageFiles();
 
-                ImageProcClass.filePaths = unRecognizedImageFiles;
+                // ImageProcClass.filePaths = unRecognizedImageFiles;
 
-                //if we alredy have processed that folder
-                if (ImageProcClass.filePaths != null)
-                {
-                    _reopenFlag = true;
-                    await _imgProcClass.StartProc(_predictionQueue);
-                }
+                // //if we alredy have processed that folder
+                // if (ImageProcClass.filePaths != null)
+                // {
+                //     _reopenFlag = true;
+                //     // await _imgProcClass.StartProc(_predictionQueue);
+                // }
+                
             }
         }
 
         // this function will match files in folder with already predicted files and 
         // if file is new -> will process it in lib
+        /*
         string[] getUnProcessedImageFiles()
         {
             string[] allFilesInFolder = null;
@@ -280,7 +307,9 @@ namespace ViewModel
             return unProcessedImageFiles;
 
         }
+        */
 
+        /*
         string[] FilterImagesInDatabase(string[] allFiles)
         {
             List<string> newFiles = new List<string>();
@@ -289,7 +318,7 @@ namespace ViewModel
             foreach (string file in allFiles)
             {
                 // string f = file;
-                returnMessageFromDB = imagesLibraryContext.SearchFile(file);
+                // returnMessageFromDB = imagesLibraryContext.SearchFile(file);
                 if (returnMessageFromDB == null)
                 //didn't find same file in database
                 {
@@ -311,7 +340,7 @@ namespace ViewModel
             }
         }
 
-
+        */
 
 
         //flag mentions that we already have predicted some imgs previously
@@ -336,35 +365,47 @@ namespace ViewModel
         {
             RecognizedImagesCollection.Add(rm);
             NumOfRecognizedImages += 1;
+            
             // Console.WriteLine(ProgressBar);
             if (ProgressBar >= 99)
             {
                 // Console.WriteLine(AllRecognitionResults.Count());
-                UpdateStatistic();
+                // UpdateStatistic();
             }
 
         }
         List<string> AllUniqueRecognitionResults;
+        /*
         void UpdateStatistic()
         {
-        //     var q = from x in AllUniqueRecognitionResults
-        //             group x by x into g
-        //             let count = g.Count()
-        //             orderby count descending
-        //             select new { Value = g.Key, Count = count };
-        //     foreach (var x in q)
-        //     {
-        //         // Console.WriteLine("Value: " + x.Value + " Count: " + x.Count);
-        //         DbStatisticCollection.Add($"Class: {x.Value} Count: {x.Count}");
-        //     }
+            //     var q = from x in AllUniqueRecognitionResults
+            //             group x by x into g
+            //             let count = g.Count()
+            //             orderby count descending
+            //             select new { Value = g.Key, Count = count };
+            //     foreach (var x in q)
+            //     {
+            //         // Console.WriteLine("Value: " + x.Value + " Count: " + x.Count);
+            //         DbStatisticCollection.Add($"Class: {x.Value} Count: {x.Count}");
+            //     }
             // foreach(var t in imagesLibraryContext.statList)
             //     DbStatisticCollection.Add($"Class: {t.stringResult} Count: {t.repeatCnt}");
 
             foreach (var t in AllUniqueRecognitionResults)
-                DbStatisticCollection.Add($"Class: {t} Count: {imagesLibraryContext.GetNumOfEachType(t)}" );
+                DbStatisticCollection.Add($"Class: {t} Count: {imagesLibraryContext.GetNumOfEachType(t)}");
             if (PropertyChanged != null)
             {
 
+                PropertyChanged(this, new PropertyChangedEventArgs(nameof(DbStatisticCollection)));
+            }
+        }
+        */
+        void ServerStatistic(Tuple<string,int> tup)
+        {
+            Console.WriteLine($"Class: {tup.Item1} Count: {tup.Item2}");
+            DbStatisticCollection.Add($"Class: {tup.Item1} Count: {tup.Item2}");
+            if (PropertyChanged != null)
+            {
                 PropertyChanged(this, new PropertyChangedEventArgs(nameof(DbStatisticCollection)));
             }
         }
@@ -377,6 +418,9 @@ namespace ViewModel
     public interface IUIServices
     {
         Task<string> OpenDialog();
+
+        void SetServerOnline();
+        void SetServerOffline();
     }
 
 

@@ -4594,11 +4594,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/denis/Non_iCloudFolder/Release/ImgProcLib/ImgProcLib.csproj",
+      "projectUniqueName": "/Users/denis/Non_iCloudFolder/C#/s02170142/ImgProcLib/ImgProcLib.csproj",
       "projectName": "ImgProcLib",
-      "projectPath": "/Users/denis/Non_iCloudFolder/Release/ImgProcLib/ImgProcLib.csproj",
+      "projectPath": "/Users/denis/Non_iCloudFolder/C#/s02170142/ImgProcLib/ImgProcLib.csproj",
       "packagesPath": "/Users/denis/.nuget/packages/",
-      "outputPath": "/Users/denis/Non_iCloudFolder/Release/ImgProcLib/obj/",
+      "outputPath": "/Users/denis/Non_iCloudFolder/C#/s02170142/ImgProcLib/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VDmymJvqwgq7XSqQt98G2Uu3icxF1sN8FStnzyvIURmcafwKdzPydKX4ARwlSZ+rjUO9oKxFexXrYuybMFlUxw==",
+  "dgSpecHash": "M1Ug/QdmjPZiDf2K2fkp4aKoNiWHzUSRRw/Eam8diNAFHcH3d984THKOPVseXOx+Nx0M63XSQHSAMOUBAoD/9A==",
   "success": true,
-  "projectFilePath": "/Users/denis/Non_iCloudFolder/Release/ImgProcLib/ImgProcLib.csproj",
+  "projectFilePath": "/Users/denis/Non_iCloudFolder/C#/s02170142/ImgProcLib/ImgProcLib.csproj",
   "expectedPackageFiles": [
     "/Users/denis/.nuget/packages/microsoft.ml.onnxruntime/1.4.0/microsoft.ml.onnxruntime.1.4.0.nupkg.sha512",
     "/Users/denis/.nuget/packages/microsoft.ml.onnxruntime.managed/1.4.0/microsoft.ml.onnxruntime.managed.1.4.0.nupkg.sha512",

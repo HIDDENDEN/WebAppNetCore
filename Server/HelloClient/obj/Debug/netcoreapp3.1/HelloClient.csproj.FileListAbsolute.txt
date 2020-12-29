@@ -1,0 +1,12 @@
+/Users/denis/Non_iCloudFolder/C#/s02170142/Server/HelloClient/bin/Debug/netcoreapp3.1/HelloClient.deps.json
+/Users/denis/Non_iCloudFolder/C#/s02170142/Server/HelloClient/bin/Debug/netcoreapp3.1/HelloClient.runtimeconfig.json
+/Users/denis/Non_iCloudFolder/C#/s02170142/Server/HelloClient/bin/Debug/netcoreapp3.1/HelloClient.runtimeconfig.dev.json
+/Users/denis/Non_iCloudFolder/C#/s02170142/Server/HelloClient/bin/Debug/netcoreapp3.1/HelloClient.dll
+/Users/denis/Non_iCloudFolder/C#/s02170142/Server/HelloClient/bin/Debug/netcoreapp3.1/HelloClient.pdb
+/Users/denis/Non_iCloudFolder/C#/s02170142/Server/HelloClient/obj/Debug/netcoreapp3.1/HelloClient.csprojAssemblyReference.cache
+/Users/denis/Non_iCloudFolder/C#/s02170142/Server/HelloClient/obj/Debug/netcoreapp3.1/HelloClient.AssemblyInfoInputs.cache
+/Users/denis/Non_iCloudFolder/C#/s02170142/Server/HelloClient/obj/Debug/netcoreapp3.1/HelloClient.AssemblyInfo.cs
+/Users/denis/Non_iCloudFolder/C#/s02170142/Server/HelloClient/obj/Debug/netcoreapp3.1/HelloClient.csproj.CoreCompileInputs.cache
+/Users/denis/Non_iCloudFolder/C#/s02170142/Server/HelloClient/obj/Debug/netcoreapp3.1/HelloClient.dll
+/Users/denis/Non_iCloudFolder/C#/s02170142/Server/HelloClient/obj/Debug/netcoreapp3.1/HelloClient.pdb
+/Users/denis/Non_iCloudFolder/C#/s02170142/Server/HelloClient/obj/Debug/netcoreapp3.1/HelloClient.genruntimeconfig.cache

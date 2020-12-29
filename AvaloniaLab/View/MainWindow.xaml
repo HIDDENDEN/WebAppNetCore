@@ -28,6 +28,11 @@
           ColumnDefinitions="*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*" 
           RowDefinitions="*,*,*,*,*,*,*,*,*,*,*,*">
 
+       <TextBlock x:Name = "serverCondition" Text="Server: offline" HorizontalAlignment="Left" 
+                   Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+                   IsVisible="False" TextAlignment="Center" 
+                   VerticalAlignment="Bottom"/>
+
           <Button x:Name="openFolder" Margin="3,3,3,3"
                 Background="Green" Foreground = "White"
                 Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" 
@@ -48,13 +53,13 @@
 
             <TextBlock x:Name="progressBarTextBlock" Text="ProgressBarScale" 
                    Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
-                   IsVisible="True" TextAlignment="Center"
+                   IsVisible="False" TextAlignment="Center"
                    VerticalAlignment="Bottom"/>
 
             <ProgressBar x:Name="progressBar" Minimum="0" Maximum="99" 
                         Value="{Binding ProgressBar}" 
                         Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="5" 
-                        Margin="3,3,3,18" IsVisible="True"/>
+                        Margin="3,3,3,18" IsVisible="False"/>
             
             <TextBlock  Text="Select class" HorizontalAlignment="Left" 
                    Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"

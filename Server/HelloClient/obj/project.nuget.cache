@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "RpGvKwRaYah6wVQcOiD8RPhJlajtPmfXU+Yqnx21uEO/7OKYKOKQDsqAsPLoU74AqztS6TJl0Vv48OziCRaFmw==",
+  "success": true,
+  "projectFilePath": "/Users/denis/Non_iCloudFolder/C#/s02170142/Server/HelloClient/HelloClient.csproj",
+  "expectedPackageFiles": [
+    "/Users/denis/.nuget/packages/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

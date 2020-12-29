@@ -12,6 +12,7 @@ namespace View
     {
         MyAppUIServices uiservices;
         ViewModel.ViewModel _viewModel;
+        TextBlock textBlock;
         public MainWindow()
         {
             InitializeComponent();
@@ -29,10 +30,13 @@ namespace View
 
                                                  this.FindControl<TextBlock>("recognizedImagesTextBlock"),
                                                  this.FindControl<TextBlock>("chosenTypeImagesTextBlock"),
-                                                 this.FindControl<TextBlock>("possibleResultsTextBlock")
+                                                 this.FindControl<TextBlock>("possibleResultsTextBlock"),
+
+                                                 this.FindControl<TextBlock>("serverCondition")
                                                  );
             _viewModel = new ViewModel.ViewModel(uiservices);
             DataContext = _viewModel;
+
         }
 
         private void InitializeComponent()
@@ -50,16 +54,19 @@ namespace View
         ComboBox possibleResultsComboBox;
         ProgressBar progressBar;
         TextBlock progressBarTextBlock;
+
         TextBlock recognizedImagesTextBlock;
         TextBlock chosenTypeImagesTextBlock;
         TextBlock possibleResultsTextBlock;
+        TextBlock serverCondition;
 
         public MyAppUIServices(Window window,
                                ListBox statisticImagesListBox,
-                               ListBox recognizedImagesListBox, ListBox chosenTypeImagesListBox, 
+                               ListBox recognizedImagesListBox, ListBox chosenTypeImagesListBox,
                                ComboBox possibleResultsComboBox,
-                               ProgressBar progressBar, TextBlock progressBarTextBlock, 
-                               TextBlock recognizedImagesTextBlock, TextBlock chosenTypeImagesTextBlock,TextBlock possibleResultsTextBlock
+                               ProgressBar progressBar, TextBlock progressBarTextBlock,
+                               TextBlock recognizedImagesTextBlock, TextBlock chosenTypeImagesTextBlock, TextBlock possibleResultsTextBlock,
+                               TextBlock serverCondition
                                )
         {
             this.window = window;
@@ -72,13 +79,26 @@ namespace View
             this.possibleResultsTextBlock = possibleResultsTextBlock;
             this.recognizedImagesTextBlock = recognizedImagesTextBlock;
             this.chosenTypeImagesTextBlock = chosenTypeImagesTextBlock;
+
+            this.serverCondition = serverCondition;
         }
 
         public async Task<string> OpenDialog()
         {
+
+
             OpenFolderDialog openFolderDialog = new OpenFolderDialog();
             openFolderDialog.Directory = @"/Users/denis/Downloads/ImageSet";
             return await openFolderDialog.ShowAsync(window);
+        }
+        public void SetServerOnline()
+        {
+            serverCondition.IsVisible = false;
+        }
+        public void SetServerOffline()
+        {
+            serverCondition.IsVisible = true;
+
         }
 
     }

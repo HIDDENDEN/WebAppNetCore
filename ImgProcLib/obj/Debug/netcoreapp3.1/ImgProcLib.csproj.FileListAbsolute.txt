@@ -7,12 +7,3 @@
 /Users/denis/Non_iCloudFolder/C#/s02170142/ImgProcLib/obj/Debug/netcoreapp3.1/ImgProcLib.csproj.CoreCompileInputs.cache
 /Users/denis/Non_iCloudFolder/C#/s02170142/ImgProcLib/obj/Debug/netcoreapp3.1/ImgProcLib.dll
 /Users/denis/Non_iCloudFolder/C#/s02170142/ImgProcLib/obj/Debug/netcoreapp3.1/ImgProcLib.pdb
-/Users/denis/Non_iCloudFolder/Release/ImgProcLib/bin/Debug/netcoreapp3.1/ImgProcLib.deps.json
-/Users/denis/Non_iCloudFolder/Release/ImgProcLib/bin/Debug/netcoreapp3.1/ImgProcLib.dll
-/Users/denis/Non_iCloudFolder/Release/ImgProcLib/bin/Debug/netcoreapp3.1/ImgProcLib.pdb
-/Users/denis/Non_iCloudFolder/Release/ImgProcLib/obj/Debug/netcoreapp3.1/ImgProcLib.csprojAssemblyReference.cache
-/Users/denis/Non_iCloudFolder/Release/ImgProcLib/obj/Debug/netcoreapp3.1/ImgProcLib.AssemblyInfoInputs.cache
-/Users/denis/Non_iCloudFolder/Release/ImgProcLib/obj/Debug/netcoreapp3.1/ImgProcLib.AssemblyInfo.cs
-/Users/denis/Non_iCloudFolder/Release/ImgProcLib/obj/Debug/netcoreapp3.1/ImgProcLib.csproj.CoreCompileInputs.cache
-/Users/denis/Non_iCloudFolder/Release/ImgProcLib/obj/Debug/netcoreapp3.1/ImgProcLib.dll
-/Users/denis/Non_iCloudFolder/Release/ImgProcLib/obj/Debug/netcoreapp3.1/ImgProcLib.pdb
