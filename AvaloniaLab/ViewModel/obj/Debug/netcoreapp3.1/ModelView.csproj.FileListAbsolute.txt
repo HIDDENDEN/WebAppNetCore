@@ -1,0 +1,12 @@
+/Users/denis/Non_iCloudFolder/C#/s02170142/AvaloniaLab/ModelView/bin/Debug/netcoreapp3.1/ModelView.deps.json
+/Users/denis/Non_iCloudFolder/C#/s02170142/AvaloniaLab/ModelView/bin/Debug/netcoreapp3.1/ModelView.dll
+/Users/denis/Non_iCloudFolder/C#/s02170142/AvaloniaLab/ModelView/bin/Debug/netcoreapp3.1/ModelView.pdb
+/Users/denis/Non_iCloudFolder/C#/s02170142/AvaloniaLab/ModelView/bin/Debug/netcoreapp3.1/ImgProcLib.dll
+/Users/denis/Non_iCloudFolder/C#/s02170142/AvaloniaLab/ModelView/bin/Debug/netcoreapp3.1/ImgProcLib.pdb
+/Users/denis/Non_iCloudFolder/C#/s02170142/AvaloniaLab/ModelView/obj/Debug/netcoreapp3.1/ModelView.csprojAssemblyReference.cache
+/Users/denis/Non_iCloudFolder/C#/s02170142/AvaloniaLab/ModelView/obj/Debug/netcoreapp3.1/ModelView.AssemblyInfoInputs.cache
+/Users/denis/Non_iCloudFolder/C#/s02170142/AvaloniaLab/ModelView/obj/Debug/netcoreapp3.1/ModelView.AssemblyInfo.cs
+/Users/denis/Non_iCloudFolder/C#/s02170142/AvaloniaLab/ModelView/obj/Debug/netcoreapp3.1/ModelView.csproj.CoreCompileInputs.cache
+/Users/denis/Non_iCloudFolder/C#/s02170142/AvaloniaLab/ModelView/obj/Debug/netcoreapp3.1/ModelView.csproj.CopyComplete
+/Users/denis/Non_iCloudFolder/C#/s02170142/AvaloniaLab/ModelView/obj/Debug/netcoreapp3.1/ModelView.dll
+/Users/denis/Non_iCloudFolder/C#/s02170142/AvaloniaLab/ModelView/obj/Debug/netcoreapp3.1/ModelView.pdb

@@ -1,0 +1,138 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/denis/Non_iCloudFolder/C#/s02170142/AvaloniaLab/ModelView/ModelView.csproj": {}
+  },
+  "projects": {
+    "/Users/denis/Non_iCloudFolder/C#/s02170142/AvaloniaLab/ModelView/ModelView.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/denis/Non_iCloudFolder/C#/s02170142/AvaloniaLab/ModelView/ModelView.csproj",
+        "projectName": "ModelView",
+        "projectPath": "/Users/denis/Non_iCloudFolder/C#/s02170142/AvaloniaLab/ModelView/ModelView.csproj",
+        "packagesPath": "/Users/denis/.nuget/packages/",
+        "outputPath": "/Users/denis/Non_iCloudFolder/C#/s02170142/AvaloniaLab/ModelView/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/denis/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "/Users/denis/Non_iCloudFolder/C#/s02170142/ImgProcLib/ImgProcLib.csproj": {
+                "projectPath": "/Users/denis/Non_iCloudFolder/C#/s02170142/ImgProcLib/ImgProcLib.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Avalonia": {
+              "target": "Package",
+              "version": "[0.9.12, )"
+            },
+            "Avalonia.Desktop": {
+              "target": "Package",
+              "version": "[0.9.12, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.402/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/denis/Non_iCloudFolder/C#/s02170142/ImgProcLib/ImgProcLib.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/denis/Non_iCloudFolder/C#/s02170142/ImgProcLib/ImgProcLib.csproj",
+        "projectName": "ImgProcLib",
+        "projectPath": "/Users/denis/Non_iCloudFolder/C#/s02170142/ImgProcLib/ImgProcLib.csproj",
+        "packagesPath": "/Users/denis/.nuget/packages/",
+        "outputPath": "/Users/denis/Non_iCloudFolder/C#/s02170142/ImgProcLib/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/denis/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.ML.OnnxRuntime": {
+              "target": "Package",
+              "version": "[1.4.0, )"
+            },
+            "SixLabors.ImageSharp": {
+              "target": "Package",
+              "version": "[1.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.402/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
